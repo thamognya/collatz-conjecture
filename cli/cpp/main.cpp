@@ -1,4 +1,7 @@
+#include <fstream>
 #include <iostream>
+#include <iterator>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
@@ -9,26 +12,37 @@ typedef unsigned long long uint128_t;
 std::vector<std::string> storage;
 
 void bfs(uint128_t i) {
-  std::cout << "WORKING on it" << std::endl;
+  std::cerr << "Working on it!" << std::endl;
+  exit(0);
   return;
 }
 
-void process(uint128_t i) {
-  uint128_t cnt = 0;
+void collatz(uint128_t i) {
+  uint128_t steps = 0;
   std::string path = "";
+
   while (i != 1) {
-    if (cnt > 1e5) {
+
+    // errors
+    if (i == 0) {
+      throw std::invalid_argument("Error: 0 reached");
+      return;
+    }
+    // too many operations (possible solution)
+    if (steps >= 1e10) {
       bfs(i);
       return;
     }
+
     path += std::to_string(i);
     path += "->";
+
+    // function
     if (i & 1)
-      // odd
       i = 3 * i + 1;
     else
-      // even
       i /= 2;
+
     // if number exists in storage, then use it
     if (i < storage.size()) {
       path += storage[i];
@@ -36,8 +50,10 @@ void process(uint128_t i) {
       std::cout << path << std::endl;
       return;
     }
-    cnt++;
+
+    steps++;
   }
+
   path += "1";
   storage.push_back(path);
   std::cout << path << std::endl;
@@ -52,13 +68,26 @@ int main(int argc, char *argv[]) {
   std::cout.tie(NULL);
 
   storage.push_back("");
-  uint128_t val = 1;
+  uint128_t num = 1;
   // infinte number generator
   while (true) {
-    process(val);
-    if (val == 10)
+    try {
+      collatz(num);
+    } catch (const std::invalid_argument &e) {
+      std::cout << e.what() << std::endl;
       break;
-    val++;
+    }
+
+    if (num == 10)
+      break;
+
+    num++;
+
+    if (num % 1000 == 0) {
+      std::ofstream output_file("./storage.txt");
+      std::ostream_iterator<std::string> output_iterator(output_file, "\n");
+      std::copy(storage.begin(), storage.end(), output_iterator);
+    }
   }
   return 0;
 }
