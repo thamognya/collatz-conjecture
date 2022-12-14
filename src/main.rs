@@ -1,7 +1,6 @@
 impl collatz {
     fn general(i: u128) {
         let mut path: String = String::from("");
-
     }
     fn bfs(i: u128) {
     }
