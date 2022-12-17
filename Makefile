@@ -1,12 +1,3 @@
-# ------------------------------------------------
-# Makefile for collatz
-#
-# Author: Thamognya Kodi <contact@thamognya.com>
-#
-# ------------------------------------------------
-
-# Variables
-
 OPTIONS= -W -Wall -Werror -Wextra -Weffc++ -pedantic -std=c++2b
 CXX = g++ $(OPTIONS)
 TARGET = ./src/main.cpp
