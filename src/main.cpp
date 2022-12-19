@@ -59,7 +59,7 @@ int main() {
   while (true) {
     collatz(num);
     num++;
-    if (num % 10 == 0) {
+    if (num % 1000 == 0) {
       storage.push_back(
           "<h1><a href=\"https://github.com/thamognya/Collatz-Conjecture\" "
           "target=\"_blank\" class=\"heading\">Collatz Conjecture Generator by "
