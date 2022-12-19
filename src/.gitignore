@@ -1,6 +1,2 @@
-*
-*/
-!.gitignore
-!web/
-!main.cpp
-!compile
+main
+collatz

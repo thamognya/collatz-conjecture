@@ -1,0 +1,5 @@
+#!/bin/sh
+
+g++ ./main.cpp -o collatz -std=c++2b
+echo "compile done, running now"
+./collatz
