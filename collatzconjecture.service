@@ -1,8 +1,7 @@
 [Unit]
 Description=Collatz Conjecture
-RequiresMountsFor=/var/www/Collatz-Conjecture/src/
 [Service]
 Type=forking
-ExecStart=./run
+ExecStart=/var/www/Collatz-Conjecture/src/run
 [Install]
 WantedBy=multi-user.target
