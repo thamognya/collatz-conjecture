@@ -6,13 +6,11 @@
   --bg2: #504945;
   --bg3: #665c54;
   --bg4: #7c6f64;
-
   --fg: #fbf1c7;
   --fg1: #ebdbb2;
   --fg2: #d5c4a1;
   --fg3: #bdae93;
   --fg4: #a89984;
-
   --red: #fb4934;
   --green: #b8bb26;
   --yellow: #fabd2f;
@@ -21,7 +19,6 @@
   --aqua: #8ec07c;
   --gray: #928374;
   --orange: #fe8019;
-
   --red-dim: #cc2412;
   --green-dim: #98971a;
   --yellow-dim: #d79921;
@@ -40,7 +37,6 @@ body {
 .heading {
   color: var(--blue-dim);
 }
-
 .heading:hover {
   color: var(--blue);
 }
