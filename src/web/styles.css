@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
 :root {
   --bg_h: #1d2021;
   --bg: #282828;
@@ -32,6 +34,7 @@
 body {
   background-color: var(--bg);
   color: var(--fg);
+  font-family: "Fira Code", monospace;
 }
 
 .heading {
