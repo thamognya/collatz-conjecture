@@ -1,0 +1,7 @@
+[Unit]
+Description=Collatz Conjecture
+[Service]
+Type=forking
+ExecStart=$(cd /var/www/Collatz-Conjecture/src/ && ./src/run)
+[Install]
+WantedBy=multi-user.target
