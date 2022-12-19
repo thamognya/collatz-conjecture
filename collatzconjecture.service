@@ -3,6 +3,6 @@ Description=Collatz Conjecture
 RequiresMountsFor=/var/www/Collatz-Conjecture/src/
 [Service]
 Type=forking
-ExecStart=$(cd /var/www/Collatz-Conjecture/src/ && ./run)
+ExecStart=./run
 [Install]
 WantedBy=multi-user.target
