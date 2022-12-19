@@ -64,7 +64,7 @@ int main() {
           "<h1><a href=\"https://github.com/thamognya/Collatz-Conjecture\" "
           "target=\"_blank\" class=\"heading\">Collatz Conjecture Generator by "
           "Thamognya "
-          "Kodi</a></h1>");
+          "Kodi</a></h1><hr>");
       storage.push_back("<link rel=\"stylesheet\" href=\"./styles.css\">");
       storage.push_back(
           "<title>Collatz Conjecture Generator by Thamognya</title>");
