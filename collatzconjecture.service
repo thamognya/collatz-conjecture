@@ -1,7 +1,8 @@
 [Unit]
 Description=Collatz Conjecture
 [Service]
-Type=forking
+Type=simple
 ExecStart=/var/www/Collatz-Conjecture/src/run
+PIDFile=/tmp/collatz.pid
 [Install]
 WantedBy=multi-user.target
