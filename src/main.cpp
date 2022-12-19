@@ -27,10 +27,7 @@ void collatz(uint128_t i) {
     }
     path += std::to_string(i);
     path += " -> ";
-    if (i & 1)
-      i = 3 * i + 1;
-    else
-      i /= 2;
+    i = ((i & 1) ? (3 * i + 1) : (i / 2));
     if (i <= storage.size()) {
       if (i <= 0) {
         storage.push_back("<h1 class=\"reached0err\"> Error Reached 0 </h1>");
@@ -47,13 +44,14 @@ void collatz(uint128_t i) {
   // std::cout << path << std::endl;
 }
 
-int main() {
+int main(int argc, char **argv) {
   std::ios::sync_with_stdio(false);
   std::ios_base::sync_with_stdio(0);
   std::cin.tie(0);
   std::cout.tie(0);
   std::cin.tie(NULL);
   std::cout.tie(NULL);
+  std::string dir = ((argc <= 0) ? "./" : argv[1]);
   storage.push_back("<h1 class=\"reached0err\"> Error Reached 0 </h1>");
   uint128_t num = 1;
   while (true) {
@@ -69,7 +67,7 @@ int main() {
       storage.push_back(
           "<title>Collatz Conjecture Generator by Thamognya</title>");
       std::reverse(storage.begin(), storage.end());
-      std::ofstream output_file("./web/index.html");
+      std::ofstream output_file(dir + "/web/index.html");
       std::ostream_iterator<std::string> output_iterator(output_file, "\n");
       std::copy(storage.begin(), storage.end(), output_iterator);
       std::reverse(storage.begin(), storage.end());

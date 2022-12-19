@@ -3,4 +3,4 @@
 BASEDIR=$(dirname "$0")
 g++ "$BASEDIR/main.cpp" -o "$BASEDIR/collatz" -std=c++2b
 echo "compile done, running now"
-exec "$BASEDIR/collatz"
+exec "$BASEDIR/collatz" $BASEDIR
