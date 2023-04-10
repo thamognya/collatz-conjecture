@@ -19,3 +19,7 @@ plugins {
 application {
     targetMachines.add(machines.macOS.architecture("aarch64"))
 }
+
+dependencies {
+    implementation(project(":lib"))
+}

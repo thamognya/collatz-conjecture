@@ -9,4 +9,4 @@
  */
 
 rootProject.name = "collatz-conjecture"
-include("app")
+include("lib", "app")
