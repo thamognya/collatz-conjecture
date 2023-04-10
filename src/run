@@ -1,6 +1,0 @@
-#!/bin/sh
-
-BASEDIR=$(dirname "$0")
-g++ "$BASEDIR/main.cpp" -o "$BASEDIR/collatz" -std=c++20
-echo "compile done, running now"
-exec "$BASEDIR/collatz" $BASEDIR
